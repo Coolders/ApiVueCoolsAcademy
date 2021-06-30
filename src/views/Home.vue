@@ -22,20 +22,7 @@ export default {
   data(){
     return {
       text:"Hola World2",
-      list:[
-        {
-          id:1,
-          nombre:'playa',
-        },
-        {
-          id:2,
-          nombre:'sol',
-        },
-        {
-          id:3,
-          nombre:'mar',
-        }
-      ]
+      courses:[]
     }
   },
   methods:{
