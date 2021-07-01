@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-      <h1 @click="changetext">{{text}}</h1>
+      <!-- <h1 @click="changetext">Hola Sergio</h1> -->
       <div>
         <ul v-for="course in courses" :key = 'course'>
-          <li>{{course.course_name}}</li>
+            <li>{{course.course_name}}</li>
         </ul>
       </div>
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   </div>
 </template>
 
 <script>
@@ -25,12 +24,10 @@ export default {
     }
   },
 
-
   mounted() {
     axios.get('http://127.0.0.1:8000/api/courses').then(response => {
             this.courses = response.data;
     });
-
 
   }
 }
