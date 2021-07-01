@@ -10,31 +10,31 @@
             </li>
         </ul>
       </div> -->
-  <div v-for="course in courses" v-bind:key = 'course'>
-  <b-card
-    :title="course.course_name"
-    :img-src="course.image"
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      {{course.description}}
-    </b-card-text>
+  <div class="p-5 d-flex flex-wrap justify-content-between"> 
+    <div v-for="course in courses" v-bind:key = 'course' class="h-100">
+      <b-card
+        :title="course.course_name"
+        tag="article"
+        style="max-width: 20rem;"
+        class="mb-2"
+      >
+        <b-img :src="course.image" class="card-img"></b-img>
+        <b-card-text class="card-description">
+          <p>{{course.description}}</p>
+        </b-card-text>
 
-    <b-button @click="usersList(course.id)" variant="primary">Users Subscribed</b-button>
-  </b-card>
-</div>
- <div class="users">
+        <b-button @click="usersList(course.id)" variant="primary">Users Subscribed</b-button>
+      </b-card>
+    </div>
+  </div>
+    <div class="users">
           <ul>
             <li v-for="user in subscribers" v-bind:key = 'user'>
               <p>{{user.name}}</p>
               
             </li>
         </ul>
-      </div>
+    </div>
 
    </div>
 
@@ -74,3 +74,16 @@ export default {
             
 }
 </script>
+
+<style lang="scss">
+  .card-img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cove
+  }
+
+  .card-description {
+    text-overflow: ellipsis !important;
+    max-height: 30% !important;
+  } 
+</style>
