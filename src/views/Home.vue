@@ -3,11 +3,7 @@
       <h1 @click="changetext">{{text}}</h1>
       <div>
         <ul v-for="course in courses" :key = 'course'>
-
-          
-          <li>
-        {{course.course_name}}
-          </li>
+          <li>{{course.course_name}}</li>
         </ul>
       </div>
       <HelloWorld msg="Welcome to Your Vue.js App"/>
