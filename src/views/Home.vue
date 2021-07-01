@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <!-- <h1 @click="changetext">Hola Sergio</h1> -->
-      <div>
+      <!-- <div>
         <ul>
             <li v-for="course in courses" :key = 'course'>
               <p>{{course.course_name}}</p>
@@ -9,9 +9,25 @@
               <button @click="usersList(course.id)">Users subscribed</button>
             </li>
         </ul>
-      </div>
-       
-      <div class="users">
+      </div> -->
+  <div v-for="course in courses" v-bind:key = 'course'>
+  <b-card
+    :title="course.course_name"
+    :img-src="course.image"
+    img-alt="Image"
+    img-top
+    tag="article"
+    style="max-width: 20rem;"
+    class="mb-2"
+  >
+    <b-card-text>
+      {{course.description}}
+    </b-card-text>
+
+    <b-button @click="usersList(course.id)" variant="primary">Users Subscribed</b-button>
+  </b-card>
+</div>
+ <div class="users">
           <ul>
             <li v-for="user in subscribers" v-bind:key = 'user'>
               <p>{{user.name}}</p>
@@ -19,7 +35,7 @@
             </li>
         </ul>
       </div>
-      
+
    </div>
 
  
