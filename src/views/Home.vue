@@ -43,7 +43,7 @@ export default {
   },
 
   mounted() {
-    axios.get('http://127.0.0.1:8000/api/courses').then(response => {
+    axios.get('https://coolsacademy.herokuapp.com/api/courses').then(response => {
             this.courses = response.data;
     });
 
@@ -51,7 +51,7 @@ export default {
 
   methods: {
     usersList(id) {
-    axios.get(`http://127.0.0.1:8000/api/courses/${id}/subscribers`).then(response => {
+    axios.get(`https://coolsacademy.herokuapp.com/api/courses/${id}/subscribers`).then(response => {
             this.subscribers = response.data} ); console.log(this.subscribers)}
   }
   

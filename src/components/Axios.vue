@@ -6,7 +6,7 @@
 
 export default {
   created() {
-    Axios.get("http://127.0.0.1:8000/api/courses").then(response => console.log(response))
+    Axios.get("https://coolsacademy.herokuapp.com/api/courses").then(response => console.log(response))
 }
 };
 </script>
