@@ -1,15 +1,6 @@
 <template>
   <div class="home">
-      <!-- <h1 @click="changetext">Hola Sergio</h1> -->
-      <!-- <div>
-        <ul>
-            <li v-for="course in courses" :key = 'course'>
-              <p>{{course.course_name}}</p>
-              <router-link to="/ShowUserList">User List</router-link> 
-              <button @click="usersList(course.id)">Users subscribed</button>
-            </li>
-        </ul>
-      </div> -->
+
   <div class="p-5 d-flex flex-wrap justify-content-between"> 
     <div v-for="course in courses" v-bind:key = 'course' class="h-100">
       <b-card
@@ -23,11 +14,18 @@
           <p>{{course.description}}</p>
         </b-card-text>
 
-        <b-button @click="usersList(course.id)" variant="primary">Users Subscribed</b-button>
+        <b-button href="#list" @click="usersList(course.id)" variant="primary">Users Subscribed</b-button>
+
+
+       
+
+     
+
+
       </b-card>
     </div>
   </div>
-    <div class="users">
+    <div id="list" class="users">
           <ul>
             <li v-for="user in subscribers" v-bind:key = 'user'>
               <p>{{user.name}}</p>
@@ -76,6 +74,7 @@ export default {
 </script>
 
 <style lang="scss">
+  
   .card-img {
     width: 100%;
     height: 15vw;
